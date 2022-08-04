@@ -35,6 +35,12 @@
         <input type="submit"><br>
      </form>
      
+      <h1 align="center">Display Access Information By Name : </h1>
+     <form action="getAccessName" align="center">
+        Enter Name : <input type="text" name="accessName" required placeholder="Enter Name"> <br><br>
+        <input type="submit"><br>
+     </form><hr>
+     
      
       <h1 align="center">Enter Access Details to Update</h1> <br>
       

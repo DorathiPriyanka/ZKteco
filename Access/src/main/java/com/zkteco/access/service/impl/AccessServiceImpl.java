@@ -78,5 +78,21 @@ public class AccessServiceImpl implements  AccessService{
 		accessrepo.deleteById(id);
 		return access;
 	}
+	@Override
+	public List<Access> findByName(String accessName) {
+		List<Access>accessList=accessrepo.findByName(accessName);
+		for(Access  access:accessList) {
+			if (access.isEntry()) {
+				access.setEntryAlias("Enabled");
+		    } else {
+		    	access.setEntryAlias("Disabled");
+		    }
+			
+			
+			
+		}
+		
+		return accessrepo.findByName(accessName);
+	}
 
 }

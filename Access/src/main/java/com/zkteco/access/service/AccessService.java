@@ -20,4 +20,6 @@ Access updateAccess(Access access);
 
 
 Access deleteAccess(int id);
+
+List<Access> findByName(String accessName);
 }

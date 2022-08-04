@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -84,4 +85,17 @@ public class AccessController {
 			mav.addObject(access);
 			return mav;
 }
+	 
+	 
+	 @GetMapping("/getAccessName")
+		public ModelAndView getAccessName(@RequestParam  String accessName)
+		{
+			ModelAndView mav = new ModelAndView("getAccessName.jsp");
+			
+			List<Access>accessList = accessService.findByName(accessName);
+			
+			mav.addObject(accessList);
+			return mav;
+			
+		}
 }
